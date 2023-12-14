@@ -1,0 +1,44 @@
+The question link -https://www.codingninjas.com/studio/problems/find-similarities-between-two-arrays_1229070?topList=love-babbar-dsa-sheet-problems&problemListRedirection=true&leftPanelTabValue=PROBLEM
+
+Solution -
+#include <bits/stdc++.h> 
+#include <unordered_map>
+#include <map>
+using namespace std;
+pair < int , int > findSimilarity(vector < int > arr1, vector < int > arr2, int n, int m) 
+{
+	int k=n+m;
+	int count1=0;
+	
+	vector <int> result(n+m);
+	vector <int> res;
+	
+	for (int i = 0; i < n; i++) {
+        result[i] = arr1[i];
+    }
+
+    for (int i = 0; i < m; i++) {
+        result[i + n] = arr2[i];
+    }
+	unordered_map<int, int> money;
+	for(int i=0 ; i<k;i++){
+		if(money.count(result[i])>0){
+			count1++;
+		}
+		else{
+			money[result[i]]++;
+			res.push_back(result[i]);
+		}
+
+		
+
+	}
+	pair<int,int> res2;
+		res2.first=count1;
+		res2.second=money.size();
+
+		return res2;
+
+
+	
+}
