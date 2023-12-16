@@ -1,3 +1,6 @@
+Question-Given an array of integers, we need to remove the duplicate values from that array, and the values should be in the same order as present in the array.
+
+Solution- 
 #include<iostream>
 #include<string>
 #include<unordered_map>
