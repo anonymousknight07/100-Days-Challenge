@@ -1,0 +1,23 @@
+Valid HTML Tags
+
+For a given string , check if the string is a valid HTML tag or not , a valid HTML tag follows the following rules:
+ 1.start with "</"
+ 2.end with ">"
+ 3.have only lowercase aphanumeric character has its body
+ 4.have a non-empty body
+
+
+
+Solution:
+
+import re
+
+def isValidHTMLClosingTag(tag):
+    # Regex to check for a valid HTML closing tag
+    regex = r'</[a-z0-9]+>'
+    
+    # Compile the regex
+    pattern = re.compile(regex)
+    
+    # Return True if the string matches the regex, else False
+    return bool(re.match(pattern, tag))
